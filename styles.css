@@ -17,8 +17,9 @@ header {
 /* Navigation styles */
 nav {
     background-color: #444;
-    overflow: hidden;
-    text-align: center; /* Center the navigation links */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 nav a {
