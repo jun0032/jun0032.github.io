@@ -1,0 +1,3 @@
+[submodule "CAMLBOY"]
+	path = CAMLBOY
+	url = https://github.com/linoscope/CAMLBOY
