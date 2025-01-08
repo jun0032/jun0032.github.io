@@ -75,6 +75,6 @@ footer {
 }
 
 .formatted-image {
-    width: 700px !important;
-    height: auto !important;
+    width: 700px;
+    height: auto;
 }
