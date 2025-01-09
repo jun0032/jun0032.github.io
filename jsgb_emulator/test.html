@@ -120,21 +120,23 @@ function run() {
 
 
 window.onload = function() {
-  canvas = document.getElementById("LCD");
-  if (canvas) {
-        ctx = canvas.getContext('2d');
-        if (ctx) {
-            ctx.imageSmoothingEnabled = false;
+  gb_Insert_Cartridge('leap-o-fate.gb', false);
+  gb_Run();
+  // canvas = document.getElementById("LCD");
+  // if (canvas) {
+  //       ctx = canvas.getContext('2d');
+  //       if (ctx) {
+  //           ctx.imageSmoothingEnabled = false;
 
-            gb_Insert_Cartridge('leap-o-fate.gb', false);
-            gb_Run();
-            run();
-        } else {
-            console.error("Failed to get 2D context");
-        }
-    } else {
-        console.error("Canvas element not found");
-    }
+  //           gb_Insert_Cartridge('leap-o-fate.gb', false);
+  //           gb_Run();
+  //           run();
+  //       } else {
+  //           console.error("Failed to get 2D context");
+  //       }
+  //   } else {
+  //       console.error("Canvas element not found");
+  //   }
 }
 
 
