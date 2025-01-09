@@ -1,0 +1,9 @@
+lib: [
+  "_build/install/default/lib/camlboy/META"
+  "_build/install/default/lib/camlboy/dune-package"
+  "_build/install/default/lib/camlboy/opam"
+]
+doc: [
+  "_build/install/default/doc/camlboy/LICENSE"
+  "_build/install/default/doc/camlboy/README.md"
+]
