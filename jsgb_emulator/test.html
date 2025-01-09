@@ -125,7 +125,7 @@ window.onload = function() {
   gb_Run();
   
   requestAnimationFrame(run);
-  ctx.clearRect(0, 0, ("LCD").width, ("LCD").height);
+  ctx.clearRect(0, 0, $('LCD').style.width, $('LCD').style.height);
   ctx.imageSmoothingEnabled = false;
   ctx.save();
   ctx.scale(4, 4);
