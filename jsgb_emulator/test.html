@@ -36,7 +36,7 @@
 <body>
 
 <div class="C">
-    <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
+    <!-- <canvas style="display:none;" id="LCD" width="160" height="144"></canvas> -->
     <canvas id="BUFFER" width="640" height="576"></canvas>
 
 <div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="google.com">Download ROM</a></div>
@@ -113,15 +113,11 @@ function run() {
 
 
 window.onload = function() {
-  var canvas = document.getElementById("BUFFER");
+  const canvas = document.getElementById("BUFFER");
   if (canvas) {
-        var ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d');
         if (ctx) {
-            console.log(ctx); //test
             ctx.imageSmoothingEnabled = false;
-            ctx.oImageSmoothingEnabled = false;
-            ctx.mozImageSmoothingEnabled = false;
-            ctx.webkitImageSmoothingEnabled = false;
 
             gb_Insert_Cartridge('flappyboy.gb', false);
             gb_Run();
@@ -133,6 +129,7 @@ window.onload = function() {
         console.error("Canvas element not found");
     }
 }
+
 
 </script>
 <center>
