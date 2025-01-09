@@ -9,7 +9,6 @@ function gb_Frame() {
     if (gbIME) gbInterrupts[gbRegIE & gbRegIF]();
     gb_TIMER_Control();
     }  
-  }
 }
 
 function gb_Step(){
