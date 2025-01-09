@@ -105,6 +105,7 @@ function run() {
 	requestAnimationFrame(run);
 	
   if (ctx) {
+    ctx.clearRect(0, 0, $('LCD').style.width, $('LCD').style.height);
 	  ctx.imageSmoothingEnabled = false;
     ctx.save();
     ctx.scale(4, 4);
@@ -117,28 +118,11 @@ function run() {
 
 
 window.onload = function() {
-  // canvas = document.getElementById("LCD");
-  // ctx = canvas.getContext('2d');
-
-  // gb_Insert_Cartridge('leap-o-fate.gb', false);
-  // gb_Run();
-  
-  // requestAnimationFrame(run);
-  // ctx.clearRect(0, 0, $('LCD').style.width, $('LCD').style.height);
-  // ctx.imageSmoothingEnabled = false;
-  // ctx.save();
-  // ctx.scale(4, 4);
-  // ctx.drawImage(gbLCDCtx.canvas, 0, 0);
-  // ctx.restore();
-  // run();
-
   const canvas = document.getElementById("LCD");
   if (canvas) {
         ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
-
-
             gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
             run();
