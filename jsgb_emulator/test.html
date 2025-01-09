@@ -71,21 +71,21 @@ var gbSeconds = 0;
 var gbFrames  = 0;
 
 function gb_Resize_LCD() {
-  // if ($('BX').value=='Size x2') {
-  //   $('BX').value='Size x3';
-  //   $('LCD').style.width='320px';
-  //   $('LCD').style.height='288px';
-  // }
-  // else if ($('BX').value=='Size x3') {
-  //   $('BX').value='Size x1';
-  //   $('LCD').style.width='480px';
-  //   $('LCD').style.height='432px';
-  // }
-  // else {
-  //   $('BX').value='Size x2';
-  //   $('LCD').style.width='160px';
-  //   $('LCD').style.height='144px';
-  // }
+  if ($('BX').value=='Size x2') {
+    $('BX').value='Size x3';
+    $('LCD').style.width='1280px';
+    $('LCD').style.height='1152px';
+  }
+  else if ($('BX').value=='Size x3') {
+    $('BX').value='Size x1';
+    $('LCD').style.width='480px';
+    $('LCD').style.height='432px';
+  }
+  else {
+    $('BX').value='Size x2';
+    $('LCD').style.width='160px';
+    $('LCD').style.height='144px';
+  }
 }
 
 function gb_Show_Fps() {
