@@ -45,7 +45,9 @@
 
 
 <!-- <label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a> -->
-
+<br/>
+<input id="BX" type="button" value="Size x2" onfocus="this.blur();" onclick="gb_Resize_LCD();"/>
+<br/>
 </div>
 
 
@@ -69,22 +71,21 @@ var canvas;
 var ctx;
 
 function gb_Resize_LCD() {
-  $('LCD').style.width='640px';
-  $('LCD').style.height='576px';
-
-  // if ($('BX').value=='Size x2') {
-  //   $('BX').value='Size x3';
-  //   $('LCD').style.width='320px';
-  //   $('LCD').style.height='288px';
-  // }
-  // else if ($('BX').value=='Size x3') {
-    
-  // }
-  // else {
-  //   $('BX').value='Size x2';
-  //   $('LCD').style.width='160px';
-  //   $('LCD').style.height='144px';
-  // }
+  if ($('BX').value=='Size x2') {
+    $('BX').value='Size x3';
+    $('LCD').style.width='320px';
+    $('LCD').style.height='288px';
+  }
+  else if ($('BX').value=='Size x3') {
+    $('BX').value='Size x1';
+    $('LCD').style.width='480px';
+    $('LCD').style.height='432px';
+  }
+  else {
+    $('BX').value='Size x2';
+    $('LCD').style.width='160px';
+    $('LCD').style.height='144px';
+  }
 }
 
 function gb_Show_Fps() {
@@ -109,8 +110,8 @@ function run() {
   if (ctx) {
 	  ctx.imageSmoothingEnabled = false;
     ctx.save();
-    ctx.scale(16, 16);
-    ctx.drawImage(gbLCDCtx.canvas, 0, 0, 4, 4);
+    ctx.scale(4, 4);
+    ctx.drawImage(gbLCDCtx.canvas, 0, 0);
     ctx.restore();
   } else {
     console.error("Failed to get 2D context");
@@ -119,21 +120,22 @@ function run() {
 
 
 window.onload = function() {
-  const canvas = document.getElementById("LCD");
-  if (canvas) {
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-            ctx.imageSmoothingEnabled = false;
+  gb_Insert_Cartridge('leap-o-fate.gb', false);
+  // const canvas = document.getElementById("LCD");
+  // if (canvas) {
+  //       const ctx = canvas.getContext('2d');
+  //       if (ctx) {
+  //           ctx.imageSmoothingEnabled = false;
 
-            gb_Insert_Cartridge('leap-o-fate.gb', false);
-            gb_Run();
-            run();
-        } else {
-            console.error("Failed to get 2D context");
-        }
-    } else {
-        console.error("Canvas element not found");
-    }
+  //           gb_Insert_Cartridge('leap-o-fate.gb', false);
+  //           gb_Run();
+  //           run();
+  //       } else {
+  //           console.error("Failed to get 2D context");
+  //       }
+  //   } else {
+  //       console.error("Canvas element not found");
+  //   }
 }
 
 
