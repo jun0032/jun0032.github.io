@@ -98,12 +98,6 @@ function scrollBar(parent,onchange) {
   };    
 
   (scb.create=function(){
-    $(scb.parentid).className='SCROLLBAR';
-    $(scb.parentid).innerHTML=
-      '<div id="'+scb.backid+'" class="BACKGROUND">'+
-      '<div id="'+scb.dragid+'" class="DRAG"></div></div>';
-    scb.dragger = new dragMachine(scb.dragid,onchange);
-    $(scb.dragid).addEventListener("mousedown", scb.dragger.drag, true);
   })(); 
 }
 
