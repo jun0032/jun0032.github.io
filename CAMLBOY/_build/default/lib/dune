@@ -1,0 +1,7 @@
+(library
+ (name camlboy_lib)
+ (libraries bigstringaf))
+
+(include_subdirs unqualified)
+
+(env (_  (flags (:standard -w -69))))
