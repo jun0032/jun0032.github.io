@@ -123,6 +123,9 @@ window.onload = function() {
         ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
+            ctx.oImageSmoothingEnabled = false;
+            ctx.mozImageSmoothingEnabled = false;
+            ctx.webkitImageSmoothingEnabled = false;
             gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
             run();
