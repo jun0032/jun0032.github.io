@@ -290,7 +290,7 @@
                     <div id="fps-box"><span id="fps">00.0</span> FPS</div>
                 </div>
                 <!-- Section commented out to have predefined ROM file -->
-                <select id="rom-selector"></select>
+                <!-- <select id="rom-selector"></select> -->
                 <button class="load-rom-btn">
                     <input id="load-rom" type="file" style="display: none;">
                     <label for="load-rom">Upload</label>
@@ -306,7 +306,9 @@
             window.onload = function() {
                 // Path to the predefined ROM file
                 const romPath = '../leap-o-fate.gb';
-                load-rom(romPath)
+                
+                // Function to load the ROM
+                loadRom(romPath);
             }
         </script>
 
