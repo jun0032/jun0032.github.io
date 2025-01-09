@@ -110,7 +110,7 @@ function run() {
 	  ctx.imageSmoothingEnabled = false;
     ctx.save();
     ctx.scale(16, 16);
-    ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+    ctx.drawImage(gbLCDCtx.canvas, 0, 0, 4, 4);
     ctx.restore();
   } else {
     console.error("Failed to get 2D context");
@@ -125,7 +125,6 @@ window.onload = function() {
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
 
-            gb_Resize_LCD()
             gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
             run();
