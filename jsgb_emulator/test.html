@@ -123,7 +123,9 @@ window.onload = function() {
 
   gb_Insert_Cartridge('leap-o-fate.gb', false);
   gb_Run();
+  
   requestAnimationFrame(run);
+  ctx.clearRect(0, 0, ("LCD").width, ("LCD").height);
   ctx.imageSmoothingEnabled = false;
   ctx.save();
   ctx.scale(4, 4);
