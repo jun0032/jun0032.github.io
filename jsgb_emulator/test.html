@@ -41,7 +41,7 @@
 
 <div class="C">
     <!-- <canvas id="LCD" width="160" height="144"></canvas> style="display:none;" -->
-    <canvas id="LCD" width="640" height="576"></canvas>
+    <canvas id="BUFFER" width="640" height="576"></canvas>
 
 <div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="google.com">Download ROM</a></div>
 
@@ -71,21 +71,21 @@ var gbSeconds = 0;
 var gbFrames  = 0;
 
 function gb_Resize_LCD() {
-  if ($('BX').value=='Size x2') {
-    $('BX').value='Size x3';
-    $('LCD').style.width='320px';
-    $('LCD').style.height='288px';
-  }
-  else if ($('BX').value=='Size x3') {
-    $('BX').value='Size x1';
-    $('LCD').style.width='480px';
-    $('LCD').style.height='432px';
-  }
-  else {
-    $('BX').value='Size x2';
-    $('LCD').style.width='160px';
-    $('LCD').style.height='144px';
-  }
+  // if ($('BX').value=='Size x2') {
+  //   $('BX').value='Size x3';
+  //   $('LCD').style.width='320px';
+  //   $('LCD').style.height='288px';
+  // }
+  // else if ($('BX').value=='Size x3') {
+  //   $('BX').value='Size x1';
+  //   $('LCD').style.width='480px';
+  //   $('LCD').style.height='432px';
+  // }
+  // else {
+  //   $('BX').value='Size x2';
+  //   $('LCD').style.width='160px';
+  //   $('LCD').style.height='144px';
+  // }
 }
 
 function gb_Show_Fps() {
@@ -106,37 +106,37 @@ function gb_Toggle_Debugger(show) {
 function run() {
 	requestAnimationFrame(run);
 	
-  if (ctx) {
-    ctx.clearRect(0, 0, $('LCD').style.width, $('LCD').style.height);
-    ctx.imageSmoothingEnabled = false;
-    ctx.oImageSmoothingEnabled = false;
-    ctx.mozImageSmoothingEnabled = false;
-    ctx.webkitImageSmoothingEnabled = false;
-    
-    ctx.save();
-    ctx.scale(4, 4);
-    ctx.drawImage(gbLCDCtx.canvas, 0, 0);
-    ctx.restore();
-  } else {
-    console.error("Failed to get 2D context");
-  }
+  ctx.imageSmoothingEnabled = false;
+  ctx.oImageSmoothingEnabled = false;
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.webkitImageSmoothingEnabled = false;
+
+  ctx.save();
+  ctx.scale(4, 4);
+  ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+  ctx.restore();
 }
 
 
 window.onload = function() {
-  const canvas = document.getElementById("LCD");
-  if (canvas) {
-        ctx = canvas.getContext('2d');
-        if (ctx) {
-            gb_Insert_Cartridge('flappyboy.gb', false);
-            gb_Run();
-            run();
-        } else {
-            console.error("Failed to get 2D context");
-        }
-    } else {
-        console.error("Canvas element not found");
-    }
+  canvas = document.getElementById("BUFFER"),
+	ctx = canvas.getContext('2d');
+  gb_Insert_Cartridge('flappyboy.gb', false);
+  gb_Run();
+  run();
+  // const canvas = document.getElementById("LCD");
+  // if (canvas) {
+  //       ctx = canvas.getContext('2d');
+  //       if (ctx) {
+  //           gb_Insert_Cartridge('flappyboy.gb', false);
+  //           gb_Run();
+  //           run();
+  //       } else {
+  //           console.error("Failed to get 2D context");
+  //       }
+  //   } else {
+  //       console.error("Canvas element not found");
+  //   }
 }
 
 
