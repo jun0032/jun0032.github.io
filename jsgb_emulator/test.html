@@ -102,20 +102,21 @@ function run() {
 	
   console.log(ctx); //test
   if (ctx) {
-	ctx.imageSmoothingEnabled = false;
+      ctx.imageSmoothingEnabled = false;
+      ctx.save();
+      ctx.scale(4, 4);
+      ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+      ctx.restore();
+  } else {
+      console.error("Failed to get 2D context");
   }
-  
-	ctx.save();
-	ctx.scale(4, 4);
-	ctx.drawImage(gbLCDCtx.canvas, 0, 0);
-	ctx.restore();
 }
 
 
 window.onload = function() {
-  const canvas = document.getElementById("BUFFER");
+  var canvas = document.getElementById("BUFFER");
   if (canvas) {
-        const ctx = canvas.getContext('2d');
+        var ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
 
