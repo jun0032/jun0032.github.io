@@ -19,8 +19,6 @@
     GNU General Public License for more details.
 
     -->
-    <link rel="stylesheet" href="jsgb.styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="toolbox.js" type="application/x-javascript"></script>
     <script src="scrollbar.js" type="application/x-javascript"></script>
     <script src="jsgb.cpu.js" type="application/x-javascript"></script>
@@ -32,6 +30,8 @@
     <script src="jsgb.timers.js" type="application/x-javascript"></script>
     <script src="jsgb.debugger.js" type="application/x-javascript"></script>
     <script src="jsgb.gameboy.js" type="application/x-javascript"></script>
+    <link rel="stylesheet" href="jsgb.styles.css" type="text/css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -100,6 +100,7 @@ function gb_Toggle_Debugger(show) {
 function run() {
 	requestAnimationFrame(run);
 	
+  console.log(ctx); //test
 	ctx.imageSmoothingEnabled = false;
 	ctx.oImageSmoothingEnabled = false;
 	ctx.mozImageSmoothingEnabled = false;
@@ -116,6 +117,7 @@ window.onload = function() {
   if (canvas) {
         var ctx = canvas.getContext('2d');
         if (ctx) {
+            console.log(ctx); //test
             ctx.imageSmoothingEnabled = false;
             ctx.oImageSmoothingEnabled = false;
             ctx.mozImageSmoothingEnabled = false;
