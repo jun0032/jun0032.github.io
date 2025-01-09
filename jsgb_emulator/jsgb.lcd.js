@@ -342,12 +342,12 @@ function gb_Init_LCD() {
   // init LCD Screen variables
   gbLCDObj=$('LCD');
   gbLCDCtx=gbLCDObj.getContext('2d');
-  gbLCDCtx.width=640;
-  gbLCDCtx.height=576;
+  gbLCDCtx.width=160;
+  gbLCDCtx.height=144;
   gbLCDCtx.fillStyle='rgb('+gbColors[0][0]+','+gbColors[0][1]+','+gbColors[0][2]+')';
-  gbLCDCtx.fillRect(0,0,640,576);
+  gbLCDCtx.fillRect(0,0,160,144);
   // get LCD scanline canvas data
-  gbLCDImage = gbLCDCtx.getImageData(0,0,640,576);
+  gbLCDImage = gbLCDCtx.getImageData(0,0,160,144);
   gbLCDImageData = gbLCDImage.data;
   // update tiles info
   gbUpdateTiles = false;
