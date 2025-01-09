@@ -340,7 +340,7 @@ function gb_Draw_Scanline() {
 function gb_Init_LCD() {
   gbScanlineCycles = 0;
   // init LCD Screen variables
-  gbLCDObj=$('LCD');
+  gbLCDObj=$('BUFFER');
   gbLCDCtx=gbLCDObj.getContext('2d');
   gbLCDCtx.width=160;
   gbLCDCtx.height=144;
