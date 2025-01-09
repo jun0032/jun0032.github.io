@@ -69,7 +69,6 @@ var canvas;
 var ctx;
 
 function gb_Resize_LCD() {
-  $('BX').value='Size x4';
   $('LCD').style.width='640px';
   $('LCD').style.height='576px';
 
@@ -125,7 +124,8 @@ window.onload = function() {
         const ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
-
+            
+            gb_Resize_LCD()
             gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
             run();
