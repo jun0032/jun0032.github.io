@@ -1,4 +1,0 @@
-(lang dune 3.17)
-(name camlboy)
-(sections (lib .) (doc ../../doc/camlboy))
-(files (lib (META dune-package opam)) (doc (LICENSE README.md)))
