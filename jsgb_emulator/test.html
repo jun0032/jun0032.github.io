@@ -37,6 +37,8 @@
 </head>
 <body>
 
+<div id="fpsDisplay"></div>
+
 <div class="C">
     <!-- <canvas id="LCD" width="160" height="144"></canvas> style="display:none;" -->
     <canvas id="LCD" width="640" height="576"></canvas>
@@ -126,7 +128,7 @@ window.onload = function() {
             ctx.oImageSmoothingEnabled = false;
             ctx.mozImageSmoothingEnabled = false;
             ctx.webkitImageSmoothingEnabled = false;
-            gb_Insert_Cartridge('leap-o-fate.gb', false);
+            gb_Insert_Cartridge('flappyboy.gb', false);
             gb_Run();
             run();
         } else {
