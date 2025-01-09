@@ -67,9 +67,9 @@ var canvas;
 var ctx;
 
 function gb_Resize_LCD() {
-  $('BX').value='Size x3';
-  $('LCD').style.width='640px';
-  $('LCD').style.height='576px';
+  // $('BX').value='Size x1';
+  // $('LCD').style.width='640px';
+  // $('LCD').style.height='576px';
 
   // if ($('BX').value=='Size x2') {
   //   $('BX').value='Size x3';
@@ -124,7 +124,7 @@ window.onload = function() {
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
 
-            gb_Insert_Cartridge('flappyboy.gb', false);
+            gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
             run();
         } else {
