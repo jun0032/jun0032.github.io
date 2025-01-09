@@ -109,7 +109,7 @@ function run() {
   if (ctx) {
 	  ctx.imageSmoothingEnabled = false;
     ctx.save();
-    // ctx.scale(4, 4);
+    ctx.scale(16, 16);
     ctx.drawImage(gbLCDCtx.canvas, 0, 0);
     ctx.restore();
   } else {
@@ -124,7 +124,7 @@ window.onload = function() {
         const ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
-            
+
             gb_Resize_LCD()
             gb_Insert_Cartridge('leap-o-fate.gb', false);
             gb_Run();
