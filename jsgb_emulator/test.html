@@ -67,23 +67,23 @@ var canvas;
 var ctx;
 
 function gb_Resize_LCD() {
-  // $('BX').value='Size x1';
-  // $('LCD').style.width='640px';
-  // $('LCD').style.height='576px';
+  $('BX').value='Size x1';
+  $('LCD').style.width='640px';
+  $('LCD').style.height='576px';
 
-  // if ($('BX').value=='Size x2') {
-  //   $('BX').value='Size x3';
-  //   $('LCD').style.width='320px';
-  //   $('LCD').style.height='288px';
-  // }
-  // else if ($('BX').value=='Size x3') {
+  if ($('BX').value=='Size x2') {
+    $('BX').value='Size x3';
+    $('LCD').style.width='320px';
+    $('LCD').style.height='288px';
+  }
+  else if ($('BX').value=='Size x3') {
     
-  // }
-  // else {
-  //   $('BX').value='Size x2';
-  //   $('LCD').style.width='160px';
-  //   $('LCD').style.height='144px';
-  // }
+  }
+  else {
+    $('BX').value='Size x2';
+    $('LCD').style.width='160px';
+    $('LCD').style.height='144px';
+  }
 }
 
 function gb_Show_Fps() {
@@ -108,7 +108,7 @@ function run() {
   if (ctx) {
 	  ctx.imageSmoothingEnabled = false;
     ctx.save();
-    ctx.scale(4, 4);
+    // ctx.scale(4, 4);
     ctx.drawImage(gbLCDCtx.canvas, 0, 0);
     ctx.restore();
   } else {
@@ -118,9 +118,9 @@ function run() {
 
 
 window.onload = function() {
-  var canvas = document.getElementById("LCD");
+  const canvas = document.getElementById("LCD");
   if (canvas) {
-        var ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d');
         if (ctx) {
             ctx.imageSmoothingEnabled = false;
 
