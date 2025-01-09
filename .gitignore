@@ -1,7 +1,1 @@
-_build/*
-_opam/*
-.merlin
-resource/private
-*.bs.js
-lib/bs
-node_modules/
+
