@@ -39,7 +39,7 @@
 
 <div class="C">
     <!-- <canvas id="LCD" width="160" height="144"></canvas> style="display:none;" -->
-    <canvas id="BUFFER" width="640" height="576"></canvas>
+    <canvas id="LCD" width="640" height="576"></canvas>
 
 <div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="google.com">Download ROM</a></div>
 
@@ -120,7 +120,7 @@ function run() {
 
 
 window.onload = function() {
-  canvas = document.getElementById("BUFFER");
+  canvas = document.getElementById("LCD");
   if (canvas) {
         ctx = canvas.getContext('2d');
         if (ctx) {
