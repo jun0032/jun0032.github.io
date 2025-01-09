@@ -67,8 +67,6 @@
 
 var gbSeconds = 0;
 var gbFrames  = 0;
-var canvas;
-var ctx;
 
 function gb_Resize_LCD() {
   if ($('BX').value=='Size x2') {
@@ -120,8 +118,13 @@ function run() {
 
 
 window.onload = function() {
+  canvas = document.getElementById("LCD");
+  ctx = canvas.getContext('2d');
+
   gb_Insert_Cartridge('leap-o-fate.gb', false);
   gb_Run();
+  run();
+
   // canvas = document.getElementById("LCD");
   // if (canvas) {
   //       ctx = canvas.getContext('2d');
