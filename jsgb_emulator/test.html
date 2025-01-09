@@ -112,11 +112,24 @@ function run() {
 
 
 window.onload = function() {
-var canvas = document.getElementById("BUFFER");
-var ctx = canvas.getContext('2d');
-  gb_Insert_Cartridge('flappyboy.gb', false);
-  gb_Run();
-  run();
+  var canvas = document.getElementById("BUFFER");
+  if (canvas) {
+        var ctx = canvas.getContext('2d');
+        if (ctx) {
+            ctx.imageSmoothingEnabled = false;
+            ctx.oImageSmoothingEnabled = false;
+            ctx.mozImageSmoothingEnabled = false;
+            ctx.webkitImageSmoothingEnabled = false;
+
+            gb_Insert_Cartridge('flappyboy.gb', false);
+            gb_Run();
+            run();
+        } else {
+            console.error("Failed to get 2D context");
+        }
+    } else {
+        console.error("Canvas element not found");
+    }
 }
 
 </script>
