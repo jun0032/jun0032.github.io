@@ -36,6 +36,7 @@
 <body>
 
 <div class="C">
+    <!-- <canvas id="LCD" width="160" height="144"></canvas> style="display:none;" -->
     <canvas id="LCD" width="640" height="576"></canvas>
 
 <div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="google.com">Download ROM</a></div>
@@ -66,30 +67,34 @@ var canvas;
 var ctx;
 
 function gb_Resize_LCD() {
-  if ($('BX').value=='Size x2') {
-    $('BX').value='Size x3';
-    $('LCD').style.width='320px';
-    $('LCD').style.height='288px';
-  }
-  else if ($('BX').value=='Size x3') {
+  $('BX').value='Size x3';
+  $('LCD').style.width='640px';
+  $('LCD').style.height='576px';
+
+  // if ($('BX').value=='Size x2') {
+  //   $('BX').value='Size x3';
+  //   $('LCD').style.width='320px';
+  //   $('LCD').style.height='288px';
+  // }
+  // else if ($('BX').value=='Size x3') {
     
-  }
-  else {
-    $('BX').value='Size x2';
-    $('LCD').style.width='160px';
-    $('LCD').style.height='144px';
-  }
+  // }
+  // else {
+  //   $('BX').value='Size x2';
+  //   $('LCD').style.width='160px';
+  //   $('LCD').style.height='144px';
+  // }
 }
 
 function gb_Show_Fps() {
-  // gbFrames+=gbFPS;
-  // gbSeconds++;
-  // $('STATUS').innerHTML = 
-  //   'Running: '+gbFPS+' '+
-  //   'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
-  //   'Bank switches/s: '+gbBankSwitchCount;
-  // gbFPS=0;
-  // gbBankSwitchCount=0;
+  gbFrames+=gbFPS;
+  gbSeconds++;
+  $('STATUS').innerHTML = 
+    'Running: '+gbFPS+' '+
+    'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
+    'Bank switches/s: '+gbBankSwitchCount;
+  gbFPS=0;
+  gbBankSwitchCount=0;
 }
 
 function gb_Toggle_Debugger(show) {
@@ -101,13 +106,13 @@ function run() {
 	
   console.log(ctx); //test
   if (ctx) {
-      ctx.imageSmoothingEnabled = false;
-      ctx.save();
-      ctx.scale(4, 4);
-      ctx.drawImage(gbLCDCtx.canvas, 0, 0);
-      ctx.restore();
+	  ctx.imageSmoothingEnabled = false;
+    ctx.save();
+    ctx.scale(4, 4);
+    ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+    ctx.restore();
   } else {
-      console.error("Failed to get 2D context");
+    console.error("Failed to get 2D context");
   }
 }
 
