@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<title>FlappyBoy</title>
+<title>Leap O' Fate</title>
 <!--
 
  JSGB v0.02 - a JavaScript Nintendo GameBoy Emulator
@@ -83,14 +83,14 @@ function gb_Resize_LCD() {
 }
 
 function gb_Show_Fps() {
-  /*gbFrames+=gbFPS;
+  gbFrames+=gbFPS;
   gbSeconds++;
   $('STATUS').innerHTML = 
     'Running: '+gbFPS+' '+
     'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
     'Bank switches/s: '+gbBankSwitchCount;
   gbFPS=0;
-  gbBankSwitchCount=0;*/
+  gbBankSwitchCount=0;
 }
 
 function gb_Toggle_Debugger(show) {
@@ -114,7 +114,7 @@ function run () {
 window.onload = function() {
 	canvas = document.getElementById("BUFFER"),
 	ctx = canvas.getContext('2d');
-  gb_Insert_Cartridge('flappyboy.gb', false);
+  gb_Insert_Cartridge('roms/leap-o-fate.gb', false);
   gb_Run();
   run();
 }
