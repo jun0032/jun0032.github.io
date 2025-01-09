@@ -178,10 +178,10 @@ function gb_Framebuffer_to_LCD() {
   }
   
   gbLCDCtx.putImageData(gbLCDImage, 0,0);
-  // gbLCDCtx.imageSmoothingEnabled = false;
-	// gbLCDCtx.oImageSmoothingEnabled = false;
-	// gbLCDCtx.mozImageSmoothingEnabled = false;
-	// gbLCDCtx.webkitImageSmoothingEnabled = false;
+  gbLCDCtx.imageSmoothingEnabled = false;
+	gbLCDCtx.oImageSmoothingEnabled = false;
+	gbLCDCtx.mozImageSmoothingEnabled = false;
+	gbLCDCtx.webkitImageSmoothingEnabled = false;
 }
 
 function gb_Clear_Scanline() {
