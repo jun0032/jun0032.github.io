@@ -108,7 +108,11 @@ function run() {
 	
   if (ctx) {
     ctx.clearRect(0, 0, $('LCD').style.width, $('LCD').style.height);
-	  ctx.imageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
+    ctx.oImageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    
     ctx.save();
     ctx.scale(4, 4);
     ctx.drawImage(gbLCDCtx.canvas, 0, 0);
@@ -124,10 +128,6 @@ window.onload = function() {
   if (canvas) {
         ctx = canvas.getContext('2d');
         if (ctx) {
-            ctx.imageSmoothingEnabled = false;
-            ctx.oImageSmoothingEnabled = false;
-            ctx.mozImageSmoothingEnabled = false;
-            ctx.webkitImageSmoothingEnabled = false;
             gb_Insert_Cartridge('flappyboy.gb', false);
             gb_Run();
             run();
