@@ -28,6 +28,7 @@
 <script src="jsgb.input.js" type="application/x-javascript"></script>
 <script src="jsgb.lcd.js" type="application/x-javascript"></script>
 <script src="jsgb.timers.js" type="application/x-javascript"></script>
+<script src="jsgb.debugger.js" type="application/x-javascript"></script>
 <script src="jsgb.gameboy.js" type="application/x-javascript"></script>
 <link href="jsgb.styles.css" rel="stylesheet" type="text/css" />
 </head>
@@ -82,14 +83,14 @@ function gb_Resize_LCD() {
 }
 
 function gb_Show_Fps() {
-  gbFrames+=gbFPS;
-  gbSeconds++;
-  $('STATUS').innerHTML = 
-    'Running: '+gbFPS+' '+
-    'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
-    'Bank switches/s: '+gbBankSwitchCount;
-  gbFPS=0;
-  gbBankSwitchCount=0;
+//   gbFrames+=gbFPS;
+//   gbSeconds++;
+//   $('STATUS').innerHTML = 
+//     'Running: '+gbFPS+' '+
+//     'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
+//     'Bank switches/s: '+gbBankSwitchCount;
+//   gbFPS=0;
+//   gbBankSwitchCount=0;
 }
 
 function gb_Toggle_Debugger(show) {
@@ -113,7 +114,7 @@ function run () {
 window.onload = function() {
 	canvas = document.getElementById("BUFFER"),
 	ctx = canvas.getContext('2d');
-  gb_Insert_Cartridge('roms/leap-o-fate.gb', false);
+  gb_Insert_Cartridge('flappyboy.gb', false);
   gb_Run();
   run();
 }
