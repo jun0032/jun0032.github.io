@@ -42,7 +42,7 @@
 <div><a href="https://github.com/bitnenfer/flappy-boy-asm">Download Source</a> | <a href="https://github.com/bitnenfer/flappy-boy-asm/raw/master/build/flappyboy.gb">Download ROM</a></div>
 
 
-<label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a>
+<!-- <label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a> -->
 
 </div>
 
@@ -83,14 +83,14 @@ function gb_Resize_LCD() {
 }
 
 function gb_Show_Fps() {
-  gbFrames+=gbFPS;
-  gbSeconds++;
-  $('STATUS').innerHTML = 
-    'Running: '+gbFPS+' '+
-    'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
-    'Bank switches/s: '+gbBankSwitchCount;
-  gbFPS=0;
-  gbBankSwitchCount=0;
+  // gbFrames+=gbFPS;
+  // gbSeconds++;
+  // $('STATUS').innerHTML = 
+  //   'Running: '+gbFPS+' '+
+  //   'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
+  //   'Bank switches/s: '+gbBankSwitchCount;
+  // gbFPS=0;
+  // gbBankSwitchCount=0;
 }
 
 function gb_Toggle_Debugger(show) {
@@ -114,7 +114,7 @@ function run () {
 window.onload = function() {
 	canvas = document.getElementById("BUFFER"),
 	ctx = canvas.getContext('2d');
-  gb_Insert_Cartridge('roms/20y.gb', false);
+  gb_Insert_Cartridge('flappyboy.gb', false);
   gb_Run();
   run();
 }
