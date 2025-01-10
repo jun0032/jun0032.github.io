@@ -64,12 +64,12 @@
 <input id="BX" type="button" value="Size x2" onfocus="this.blur();" onclick="gb_Resize_LCD();"/>
 <br/>
 
-<input id="TOGGLE_DEBUGGER" type="checkbox" onclick="gb_Toggle_Debugger(this.checked);" />
+<!-- <input id="TOGGLE_DEBUGGER" type="checkbox" onclick="gb_Toggle_Debugger(this.checked);" />
 <label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a>
 </div>
 
 <div id="DEBUGGER">
-</div>
+</div> -->
 
 <div id="FOOTER" class="CLR C">
 <div class="IB L">
@@ -119,9 +119,9 @@ function gb_Show_Fps() {
   gbBankSwitchCount=0;
 }
 
-function gb_Toggle_Debugger(show) {
-  $('DEBUGGER').style.height=(show)?'auto':'0px';
-}
+// function gb_Toggle_Debugger(show) {
+//   $('DEBUGGER').style.height=(show)?'auto':'0px';
+// }
 
 window.onload = function() {
   gb_Insert_Cartridge("leap-o-fate.gb", false);
