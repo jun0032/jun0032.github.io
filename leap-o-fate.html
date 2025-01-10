@@ -39,7 +39,10 @@
 <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
 <canvas id="BUFFER" width="640" height="576"></canvas>
 
-<div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="https://github.com/jun0032/jun0032.github.io/blob/main/jsgb/roms/leap-o-fate.gb">Download ROM</a></div>
+<div>
+  <a href="https://github.com/panpov/leap-o-fate">Download Source</a> | 
+  <a href="https://github.com/jun0032/jun0032.github.io/blob/main/jsgb/roms/leap-o-fate.gb">Download ROM</a>
+</div>
 
 <!--
 <label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a>
@@ -63,8 +66,6 @@
 
 var gbSeconds = 0;
 var gbFrames  = 0;
-// var canvas;
-// var ctx;
 
 function gb_Resize_LCD() {
   if ($('BX').value=='Size x2') {
