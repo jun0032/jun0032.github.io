@@ -32,7 +32,7 @@ function gb_OnKeyDown_Event(e) {
     // down
     case 40: gbPin14&=0xF7; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // up
-    case 40: gbPin14&=0xFB; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 38: gbPin14&=0xFB; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // left
     case 37: gbPin14&=0xFD; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // right
@@ -53,7 +53,7 @@ function gb_OnKeyUp_Event(e) {
     // down
     case 40: gbPin14|=8; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // up
-    case 40: gbPin14|=4; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 38: gbPin14|=4; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // left
     case 37: gbPin14|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // right
