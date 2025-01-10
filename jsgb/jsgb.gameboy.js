@@ -46,6 +46,6 @@ function gb_Insert_Cartridge(fileName, Start) {
   gb_Init_Interrupts();
   gb_Init_CPU();
   gb_Init_Input();
-  gb_ROM_Load('roms/'+fileName);
+  gb_ROM_Load('jsgb/roms/'+fileName);
 }
 
