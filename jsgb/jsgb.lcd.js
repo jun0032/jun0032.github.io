@@ -344,8 +344,7 @@ function gb_Init_LCD() {
   gbLCDCtx=gbLCDObj.getContext('2d');
   gbLCDCtx.width=160;
   gbLCDCtx.height=144;
-  // gbLCDCtx.fillStyle='rgb('+gbColors[0][0]+','+gbColors[0][1]+','+gbColors[0][2]+')';
-  gbLCDCtx.fillStyle='rgb(0,0,0)';
+  gbLCDCtx.fillStyle='rgb('+gbColors[0][0]+','+gbColors[0][1]+','+gbColors[0][2]+')';
   gbLCDCtx.fillRect(0,0,160,144);
   // get LCD scanline canvas data
   gbLCDImage = gbLCDCtx.getImageData(0,0,160,144);
