@@ -48,8 +48,8 @@
 
 <div id="DEBUG">&nbsp;</div>
 
-<!-- <select id="CARTRIDGE" rows="1" onchange="gb_Insert_Cartridge(this.value,true);"> -->
-<!-- <option value="mc-mrder.gb">PD mc-mrder</option>
+<!-- <select id="CARTRIDGE" rows="1" onchange="gb_Insert_Cartridge(this.value,true);">
+<option value="mc-mrder.gb">PD mc-mrder</option>
 <option value="20y.gb">PD 20y</option>
 <option value="Ls.gb">PD Ls</option>
 <option value="Bc.gb">PD Bc</option>
@@ -57,10 +57,10 @@
 <option value="q-tsu.gb">PD q-tsu</option>
 </select><br/> -->
 
-<input id="BR" type="button" value="Run"   onfocus="this.blur();" onclick="gb_Run();"/>
-<!-- <input id="BP" type="button" value="Pause" onfocus="this.blur();" disabled onclick="gb_Pause();"/>
+<!-- <input id="BR" type="button" value="Run"   onfocus="this.blur();" onclick="gb_Run();"/>
+<input id="BP" type="button" value="Pause" onfocus="this.blur();" disabled onclick="gb_Pause();"/>
 <input id="BS" type="button" value="Step"  onfocus="this.blur();" onclick="gb_Step();"/>
-<input id="BS" type="button" value="Reset"  onfocus="this.blur();" onclick="gb_Insert_Cartridge($('CARTRIDGE').value,true);"/> --> -->
+<input id="BS" type="button" value="Reset"  onfocus="this.blur();" onclick="gb_Insert_Cartridge($('CARTRIDGE').value,true);"/> -->
 <input id="BX" type="button" value="Size x2" onfocus="this.blur();" onclick="gb_Resize_LCD();"/>
 <br/>
 
@@ -124,9 +124,9 @@ function gb_Toggle_Debugger(show) {
 }
 
 window.onload = function() {
-  gb_Insert_Cartridge('leap-o-fate.gb', false);
-  // gb_Run();
-  gb_Toggle_Debugger($('TOGGLE_DEBUGGER').checked);
+  gb_Insert_Cartridge($('CARTRIDGE').value, false);
+  gb_Run();
+  // gb_Toggle_Debugger($('TOGGLE_DEBUGGER').checked);
 }
 
 </script>

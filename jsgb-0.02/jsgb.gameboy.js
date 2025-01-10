@@ -25,9 +25,6 @@ function gb_Step(){
 function gb_Run() {
   if (!gbPause) return;
   gbPause=false;
-  $('BR').disabled=1;
-  $('BP').disabled=0;
-  $('BS').disabled=1;
   gbFpsInterval=setInterval(gb_Show_Fps,1000);
   gbRunInterval=setInterval(gb_Frame,16);
 }
@@ -56,7 +53,5 @@ function gb_Insert_Cartridge(fileName, Start) {
   gb_Init_Input();
   gb_ROM_Load('roms/'+fileName);
   gb_Dump_All();
-  if (Start) $('BR').onclick();
-  else $('BP').onclick();
 }
 
