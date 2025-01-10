@@ -20,7 +20,7 @@ var br='<br/'+'>\n';
 // Z80's negative numbers are in two's complement
 function sb(n){return (n>127)?((n&127)-128):n;}
 
-// Left zero fill until length of s = sc
+// Left zero fill until length of s = l
 function zf(s,l) {while (s.length<l)s='0'+s;return s;}
 
 // Convert decimal to hexadecimal
