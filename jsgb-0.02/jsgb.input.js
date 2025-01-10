@@ -58,14 +58,14 @@ function gb_OnKeyUp_Event(e) {
     case 37: gbPin14|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // right
     case 39: gbPin14|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
-    // start
-    case 65: gbPin15|=8; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
-    // select
-    case 83: gbPin15|=4; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
-    // button B
-    case 90: gbPin15|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
-    // button A
-    case 88: gbPin15|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    // start (enter-key)
+    case 13: gbPin15|=8; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    // select (shift-key)
+    case 16: gbPin15|=4; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    // button B (a-key)
+    case 65: gbPin15|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    // button A (s-key)
+    case 83: gbPin15|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
   }
 }
 
