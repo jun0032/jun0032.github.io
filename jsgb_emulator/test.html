@@ -41,7 +41,7 @@
 
 <div class="C">
     <!-- <canvas id="LCD" width="160" height="144"></canvas> style="display:none;" -->
-    <canvas id="LCD" width="640" height="576"></canvas>
+    <canvas id="LCD" width="160" height="144"></canvas>
 
 <div><a href="https://github.com/panpov/leap-o-fate">Download Source</a> | <a href="google.com">Download ROM</a></div>
 
@@ -89,14 +89,14 @@ function gb_Resize_LCD() {
 }
 
 function gb_Show_Fps() {
-  // gbFrames+=gbFPS;
-  // gbSeconds++;
-  // $('STATUS').innerHTML = 
-  //   'Running: '+gbFPS+' '+
-  //   'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
-  //   'Bank switches/s: '+gbBankSwitchCount;
-  // gbFPS=0;
-  // gbBankSwitchCount=0;
+  gbFrames+=gbFPS;
+  gbSeconds++;
+  $('STATUS').innerHTML = 
+    'Running: '+gbFPS+' '+
+    'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
+    'Bank switches/s: '+gbBankSwitchCount;
+  gbFPS=0;
+  gbBankSwitchCount=0;
 }
 
 function gb_Toggle_Debugger(show) {
@@ -119,7 +119,7 @@ function run() {
 
 
 window.onload = function() {
-  const canvas = document.getElementById("LCD");
+  const canvas = $('LCD');
   if (canvas) {
         ctx = canvas.getContext('2d');
         if (ctx) {
