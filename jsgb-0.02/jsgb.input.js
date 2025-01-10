@@ -66,7 +66,7 @@ function gb_OnKeyUp_Event(e) {
     case 65: gbPin15|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // button A (s-key)
     case 83: gbPin15|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
-  }11
+  }
 }
 
 function gb_Init_Input() {
