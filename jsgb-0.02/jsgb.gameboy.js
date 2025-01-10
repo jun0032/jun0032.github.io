@@ -8,10 +8,6 @@ function gb_Frame() {
     if (!gbHalt) OP[MEMR(PC++)](); else gbCPUTicks=4;
     if (gbIME) gbInterrupts[gbRegIE & gbRegIF]();
     gb_TIMER_Control();
-    if (gbIsBreakpoint) if (gbBreakpointsList.indexOf(PC)>=0) {
-      gb_Pause();
-      gb_Toggle_Debugger(true);
-    }  
   }
 }
 
@@ -45,13 +41,11 @@ function gb_Insert_Cartridge(fileName, Start) {
   gb_Pause();
   gbSeconds = 0;
   gbFrames  = 0;
-  gb_Init_Debugger();
   gb_Init_Memory();
   gb_Init_LCD();
   gb_Init_Interrupts();
   gb_Init_CPU();
   gb_Init_Input();
   gb_ROM_Load('roms/'+fileName);
-  gb_Dump_All();
 }
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<title>JSGB v.0.02: a JavaScript Nintendo GameBoy Emulator and Debugger</title>
+<title>FlappyBoy</title>
 <!--
 
  JSGB v0.02 - a JavaScript Nintendo GameBoy Emulator
@@ -31,45 +31,21 @@
 <script src="jsgb.debugger.js" type="application/x-javascript"></script>
 <script src="jsgb.gameboy.js" type="application/x-javascript"></script>
 <link href="jsgb.styles.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="favicon.gif" />
 </head>
 <body>
 
 <div class="C">
 
-<div id="HEADER">
-<h1>JSGB</h1>  
-[ v.0.2 ]<br/>a JavaScript GameBoy Emulator<br/>by Pedro Ladaria
-</div>
+<canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
+<canvas id="BUFFER" width="640" height="576"></canvas>
 
-<canvas id="LCD" width="160" height="144"></canvas>
+<div><a href="https://github.com/bitnenfer/flappy-boy-asm">Download Source</a> | <a href="https://github.com/bitnenfer/flappy-boy-asm/raw/master/build/flappyboy.gb">Download ROM</a></div>
 
-<div id="STATUS">Pause</div>
-
-<div id="DEBUG">&nbsp;</div>
-
-<!-- <select id="CARTRIDGE" rows="1" onchange="gb_Insert_Cartridge(this.value,true);">
-<option value="mc-mrder.gb">PD mc-mrder</option>
-<option value="20y.gb">PD 20y</option>
-<option value="Ls.gb">PD Ls</option>
-<option value="Bc.gb">PD Bc</option>
-<option value="wario_walking.gb">PD wario_walking</option>
-<option value="q-tsu.gb">PD q-tsu</option>
-</select><br/> -->
-
-<!-- <input id="BR" type="button" value="Run"   onfocus="this.blur();" onclick="gb_Run();"/>
-<input id="BP" type="button" value="Pause" onfocus="this.blur();" disabled onclick="gb_Pause();"/>
-<input id="BS" type="button" value="Step"  onfocus="this.blur();" onclick="gb_Step();"/>
-<input id="BS" type="button" value="Reset"  onfocus="this.blur();" onclick="gb_Insert_Cartridge($('CARTRIDGE').value,true);"/> -->
-<input id="BX" type="button" value="Size x2" onfocus="this.blur();" onclick="gb_Resize_LCD();"/>
-<br/>
-
-<!-- <input id="TOGGLE_DEBUGGER" type="checkbox" onclick="gb_Toggle_Debugger(this.checked);" />
+<!--
 <label for="TOGGLE_DEBUGGER">debugger</label> | <a href="changelog.htm">changelog</a> | <a href="credits.htm">credits</a>
+-->
 </div>
 
-<div id="DEBUGGER">
-</div> -->
 
 <div id="FOOTER" class="CLR C">
 <div class="IB L">
@@ -81,14 +57,14 @@
 </div>
 <br/>
 <br/>
-<div class="NFO">Recommended browser: Chrome/Chromium 4+<br/>
-Other browsers are slow or don't work at all!</div>
 </div>
 
 <script type="application/x-javascript">
 
 var gbSeconds = 0;
 var gbFrames  = 0;
+var canvas;
+var ctx;
 
 function gb_Resize_LCD() {
   if ($('BX').value=='Size x2') {
@@ -109,27 +85,47 @@ function gb_Resize_LCD() {
 }
 
 function gb_Show_Fps() {
-  gbFrames+=gbFPS;
+  /*gbFrames+=gbFPS;
   gbSeconds++;
   $('STATUS').innerHTML = 
     'Running: '+gbFPS+' '+
     'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
     'Bank switches/s: '+gbBankSwitchCount;
   gbFPS=0;
-  gbBankSwitchCount=0;
+  gbBankSwitchCount=0;*/
 }
 
-// function gb_Toggle_Debugger(show) {
-//   $('DEBUGGER').style.height=(show)?'auto':'0px';
-// }
+function gb_Toggle_Debugger(show) {
+  $('DEBUGGER').style.height=(show)?'auto':'0px';
+}
+
+function run () {
+	requestAnimationFrame(run);
+	
+	ctx.imageSmoothingEnabled = false;
+	ctx.oImageSmoothingEnabled = false;
+	ctx.mozImageSmoothingEnabled = false;
+	ctx.webkitImageSmoothingEnabled = false;
+	ctx.save();
+	ctx.scale(4, 4);
+	ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+	ctx.restore();
+}
+
 
 window.onload = function() {
-  gb_Insert_Cartridge("leap-o-fate.gb", false);
+	canvas = document.getElementById("BUFFER"),
+	ctx = canvas.getContext('2d');
+  gb_Insert_Cartridge('leap-o-fate.gb', false);
   gb_Run();
-  // gb_Toggle_Debugger($('TOGGLE_DEBUGGER').checked);
+  run();
 }
 
 </script>
-
+<center>
+<footer style="bottom:0px; position: fixed;width:100%; padding-bottom: 20px;">
+<a href="http://sourceforge.net/projects/jsgbemu/" target="_blank">Powered by JSGB v.0.02: a JavaScript Nintendo GameBoy Emulator and Debugger</a>
+</footer>
+</center>
 </body>
 </html>
