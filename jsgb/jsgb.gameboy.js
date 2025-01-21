@@ -37,7 +37,7 @@ function gb_Pause() {
   gb_Dump_All();        
 }
 
-function gb_Insert_Cartridge(filePath, Start) {
+function gb_Insert_Cartridge(fileName, Start) {
   gb_Pause();
   gbSeconds = 0;
   gbFrames  = 0;
@@ -46,6 +46,6 @@ function gb_Insert_Cartridge(filePath, Start) {
   gb_Init_Interrupts();
   gb_Init_CPU();
   gb_Init_Input();
-  gb_ROM_Load(filePath);
+  gb_ROM_Load('roms/'+fileName);
 }
 
