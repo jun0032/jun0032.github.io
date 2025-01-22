@@ -37,7 +37,6 @@
 </head>
 <body>
   <div class="C">
-    <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
     <canvas id="BUFFER" width="640" height="576"></canvas>
 
     <div>
@@ -63,23 +62,7 @@
   var canvas;
   var ctx;
 
-  // function gb_Resize_LCD() {
-    // if ($('BX').value=='Size x2') {
-    //   $('BX').value='Size x3';
-    //   $('LCD').style.width='320px';
-    //   $('LCD').style.height='288px';
-    // }
-    // else if ($('BX').value=='Size x3') {
-      
-    // }
-    // else {
-    //   $('BX').value='Size x2';
-    //   $('LCD').style.width='160px';
-    //   $('LCD').style.height='144px';
-    // }
-  // }
-
-  // function gb_Show_Fps() {
+  function gb_Show_Fps() {
     /*gbFrames+=gbFPS;
     gbSeconds++;
     $('STATUS').innerHTML = 
@@ -92,7 +75,7 @@
 
   // function gb_Toggle_Debugger(show) {
   //   $('DEBUGGER').style.height=(show)?'auto':'0px';
-  // }
+  }
 
   function run () {
     requestAnimationFrame(run);
