@@ -21,7 +21,7 @@ function gb_Step(){
 function gb_Run() {
   if (!gbPause) return;
   gbPause=false;
-  gbFpsInterval=setInterval(gb_Show_Fps,1000);
+  // gbFpsInterval=setInterval(gb_Show_Fps,1000);
   gbRunInterval=setInterval(gb_Frame,16);
 }
 
