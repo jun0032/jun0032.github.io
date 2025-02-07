@@ -44,7 +44,55 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
 
 /* Dpad buttons and selector buttons */
 
-/* .UP_DPAD {text-align:center;cursor:pointer;font-size:10px;font-weight:bold;
-  border:1px solid #888;background:#eee;
-  padding:1px 3px;margin:2px;}
-.UP_DPAD:hover { background:#f8f8f8; color:#777; } */
+.gameboy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.screen {
+    margin-bottom: 20px;
+}
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+.dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dpad-row {
+    display: flex;
+}
+.dpad button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons-row {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+.buttons button {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+.start-select {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 20px;
+}
+.start-select button {
+    width: 80px;
+    height: 40px;
+}

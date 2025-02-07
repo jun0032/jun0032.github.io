@@ -56,67 +56,146 @@
     </div>
   </div>
 
+  <div class="gameboy-container">
+    <div class="screen">
+        <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
+        <canvas id="BUFFER" width="640" height="576"></canvas>
+    </div>
+    <div class="controls">
+        <div class="dpad">
+            <div class="dpad-row">
+                <button class="BTN" id="buttonUp">Up</button>
+            </div>
+            <div class="dpad-row">
+                <button class="BTN" id="buttonLeft">Left</button>
+                <button class="BTN" id="buttonDown">Down</button>
+                <button class="BTN" id="buttonRight">Right</button>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="buttons-row">
+                <button class="BTN" id="buttonA">A</button>
+                <button class="BTN" id="buttonB">B</button>
+            </div>
+        </div>
+    </div>
+    <div class="start-select">
+        <button class="BTN" id="buttonStart">Start</button>
+        <button class="BTN" id="buttonSelect">Select</button>
+    </div>
+  </div>
+
   <script type="application/x-javascript">
+  
+    var gbSeconds = 0;
+    var gbFrames  = 0;
+    var canvas;
+    var ctx;
 
-  var gbSeconds = 0;
-  var gbFrames  = 0;
-  var canvas;
-  var ctx;
+    function gb_Show_Fps() {
+      /*gbFrames+=gbFPS;
+      gbSeconds++;
+      $('STATUS').innerHTML = 
+        'Running: '+gbFPS+' '+
+        'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
+        'Bank switches/s: '+gbBankSwitchCount;
+      gbFPS=0;
+      gbBankSwitchCount=0;*/
+    // }
 
-  function gb_Show_Fps() {
-    /*gbFrames+=gbFPS;
-    gbSeconds++;
-    $('STATUS').innerHTML = 
-      'Running: '+gbFPS+' '+
-      'fps - Average: '+(gbFrames/gbSeconds).toFixed(2)+' - '+
-      'Bank switches/s: '+gbBankSwitchCount;
-    gbFPS=0;
-    gbBankSwitchCount=0;*/
-  // }
+    // function gb_Toggle_Debugger(show) {
+    //   $('DEBUGGER').style.height=(show)?'auto':'0px';
+    }
 
-  // function gb_Toggle_Debugger(show) {
-  //   $('DEBUGGER').style.height=(show)?'auto':'0px';
-  }
+    function run () {
+      requestAnimationFrame(run);
+      
+      ctx.imageSmoothingEnabled = false;
+      ctx.oImageSmoothingEnabled = false;
+      ctx.mozImageSmoothingEnabled = false;
+      ctx.webkitImageSmoothingEnabled = false;
+      ctx.save();
+      ctx.scale(4, 4);
+      ctx.drawImage(gbLCDCtx.canvas, 0, 0);
+      ctx.restore();
+    }
 
-  function run () {
-    requestAnimationFrame(run);
-    
-    ctx.imageSmoothingEnabled = false;
-    ctx.oImageSmoothingEnabled = false;
-    ctx.mozImageSmoothingEnabled = false;
-    ctx.webkitImageSmoothingEnabled = false;
-    ctx.save();
-    ctx.scale(4, 4);
-    ctx.drawImage(gbLCDCtx.canvas, 0, 0);
-    ctx.restore();
-  }
-
-  window.onload = function() {
-    canvas = document.getElementById("BUFFER"),
-    ctx = canvas.getContext('2d');
-    gb_Insert_Cartridge('game.gb', false);
-    gb_Run();
-    run();
-  }
+    window.onload = function() {
+      canvas = document.getElementById("BUFFER"),
+      ctx = canvas.getContext('2d');
+      gb_Insert_Cartridge('game.gb', false);
+      gb_Run();
+      run();
+    }
 
   </script>
 
-  <button class="BTN" id="buttonStart">Press A</button>
-    <script src="jsgb.input.js"></script>
-    <script>
-        document.getElementById('buttonStart').addEventListener('click', function() {
-            // Create a new keyboard event
-            var event = new KeyboardEvent('keydown', {
-                key: 'enter',
-                code: 'KeyEnter',
-                keyCode: 13,
-                which: 13,
-                bubbles: true
-            });
-            // Dispatch the event
-            document.dispatchEvent(event);
+  <script>
+    function simulateKeyEvent(type, keyCode) {
+        var event = new KeyboardEvent(type, {
+            keyCode: keyCode,
+            which: keyCode,
+            bubbles: true
         });
-    </script>
+        document.dispatchEvent(event);
+    }
+
+    document.getElementById('buttonA').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 83); // Key code for 'S'
+    });
+    document.getElementById('buttonA').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 83); // Key code for 'S'
+    });
+
+    document.getElementById('buttonB').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 65); // Key code for 'A'
+    });
+    document.getElementById('buttonB').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 65); // Key code for 'A'
+    });
+
+    document.getElementById('buttonStart').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 13); // Key code for 'Enter'
+    });
+    document.getElementById('buttonStart').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 13); // Key code for 'Enter'
+    });
+
+    document.getElementById('buttonSelect').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 16); // Key code for 'Shift'
+    });
+    document.getElementById('buttonSelect').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 16); // Key code for 'Shift'
+    });
+
+    document.getElementById('buttonUp').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 38); // Key code for 'Up'
+    });
+    document.getElementById('buttonUp').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 38); // Key code for 'Up'
+    });
+
+    document.getElementById('buttonDown').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 40); // Key code for 'Down'
+    });
+    document.getElementById('buttonDown').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 40); // Key code for 'Down'
+    });
+
+    document.getElementById('buttonLeft').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 37); // Key code for 'Left'
+    });
+    document.getElementById('buttonLeft').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 37); // Key code for 'Left'
+    });
+
+    document.getElementById('buttonRight').addEventListener('mousedown', function() {
+        simulateKeyEvent('keydown', 39); // Key code for 'Right'
+    });
+    document.getElementById('buttonRight').addEventListener('mouseup', function() {
+        simulateKeyEvent('keyup', 39); // Key code for 'Right'
+    });
+  </script>
 
   <footer style="bottom:0px; position: fixed;width:100%; padding-bottom: 20px;">
     <center>  
