@@ -96,3 +96,8 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
     width: 80px;
     height: 40px;
 }
+
+* {
+    transform: scale(1.2); /* Scale everything by 20% */
+    transform-origin: 0 0;
+}
