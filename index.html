@@ -37,8 +37,35 @@
 </head>
 <body>
   <div class="C">
-    <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
-    <canvas id="BUFFER" width="640" height="576"></canvas>
+    <!-- <canvas style="display:none;" id="LCD" width="160" height="144"></canvas> -->
+    <div class="gameboy-container">
+      <div class="screen">
+          <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
+          <canvas id="BUFFER" width="640" height="576"></canvas>
+      </div>
+      <div class="controls">
+          <div class="dpad">
+              <div class="dpad-row">
+                  <button class="BTN" id="buttonUp">Up</button>
+              </div>
+              <div class="dpad-row">
+                  <button class="BTN" id="buttonLeft">Left</button>
+                  <button class="BTN" id="buttonDown">Down</button>
+                  <button class="BTN" id="buttonRight">Right</button>
+              </div>
+          </div>
+          <div class="buttons">
+              <div class="buttons-row">
+                  <button class="BTN" id="buttonA">A</button>
+                  <button class="BTN" id="buttonB">B</button>
+              </div>
+          </div>
+      </div>
+      <div class="start-select">
+          <button class="BTN" id="buttonStart">Start</button>
+          <button class="BTN" id="buttonSelect">Select</button>
+      </div>
+    </div>
 
     <div>
       <a href="https://github.com/panpov/leap-o-fate" target="_blank">View Source</a> | <a href="https://github.com/panpov/panpov.github.io/raw/refs/heads/main/roms/game.gb">Download ROM</a>
@@ -53,35 +80,6 @@
       <strong>Enter</strong>: Start<br>
       <strong>Shift</strong>: Select<br>
       <center>← ↑ → ↓</center>
-    </div>
-  </div>
-
-  <div class="gameboy-container">
-    <div class="screen">
-        <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
-        <canvas id="BUFFER" width="640" height="576"></canvas>
-    </div>
-    <div class="controls">
-        <div class="dpad">
-            <div class="dpad-row">
-                <button class="BTN" id="buttonUp">Up</button>
-            </div>
-            <div class="dpad-row">
-                <button class="BTN" id="buttonLeft">Left</button>
-                <button class="BTN" id="buttonDown">Down</button>
-                <button class="BTN" id="buttonRight">Right</button>
-            </div>
-        </div>
-        <div class="buttons">
-            <div class="buttons-row">
-                <button class="BTN" id="buttonA">A</button>
-                <button class="BTN" id="buttonB">B</button>
-            </div>
-        </div>
-    </div>
-    <div class="start-select">
-        <button class="BTN" id="buttonStart">Start</button>
-        <button class="BTN" id="buttonSelect">Select</button>
     </div>
   </div>
 
