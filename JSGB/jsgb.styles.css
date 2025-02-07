@@ -41,3 +41,10 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
 #LCD { margin:3px; padding:2px; image-rendering:-webkit-optimizeSpeed; }
 .NFO { border:1px solid #AAA; border-radius:6px; display:inline-block;
   padding:8px 16px; font-size:12px; font-weight:bold; background: #EEE; }
+
+/* Dpad buttons and selector buttons */
+
+.UP_DPAD {text-align:center;cursor:pointer;font-size:10px;font-weight:bold;
+  border:1px solid #888;background:#eee;
+  padding:1px 3px;margin:2px;}
+.UP_DPAD:hover { background:#f8f8f8; color:#777; }
