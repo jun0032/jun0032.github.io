@@ -44,7 +44,7 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
 
 /* Dpad buttons and selector buttons */
 
-.gameboy-container {
+/* .gameboy-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
     width: 60px;
     height: 60px;
     margin: 5px;
-}
+} */
 .start-select {
     display: flex;
     justify-content: space-between;
@@ -95,9 +95,4 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
 .start-select button {
     width: 80px;
     height: 40px;
-}
-
-* {
-    transform: scale(1.2); /* Scale everything by 20% */
-    transform-origin: 0 0;
 }
