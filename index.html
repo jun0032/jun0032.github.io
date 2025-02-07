@@ -101,7 +101,22 @@
 
   </script>
 
-  <center><button class="UP_DPAD">Up</button></center>
+  <button class="BTN" id="buttonStart">Press A</button>
+    <script src="jsgb.input.js"></script>
+    <script>
+        document.getElementById('buttonStart').addEventListener('click', function() {
+            // Create a new keyboard event
+            var event = new KeyboardEvent('keydown', {
+                key: 'enter',
+                code: 'KeyEnter',
+                keyCode: 13,
+                which: 13,
+                bubbles: true
+            });
+            // Dispatch the event
+            document.dispatchEvent(event);
+        });
+    </script>
 
   <footer style="bottom:0px; position: fixed;width:100%; padding-bottom: 20px;">
     <center>  

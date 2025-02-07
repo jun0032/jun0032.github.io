@@ -70,6 +70,7 @@ function gb_OnKeyUp_Event(e) {
 }
 
 function gb_Init_Input() {
+  var up_pressed = false;
   document.onkeydown = gb_OnKeyDown_Event;
   document.onkeyup = gb_OnKeyUp_Event;
   gbPin14=0xEF;
