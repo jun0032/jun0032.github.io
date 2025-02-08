@@ -86,12 +86,12 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
     height: 60px;
     margin: 5px;
 }
-/* .start-select {
+.start-select {
     display: flex;
     justify-content: space-between;
     width: 200px;
     margin-top: 20px;
-} */
+}
 .start-select button {
     width: 80px;
     height: 40px;

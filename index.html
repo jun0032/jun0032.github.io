@@ -43,7 +43,7 @@
           <canvas id="BUFFER" width="640" height="576"></canvas>
       </div>
       <div class="controls">
-        <!-- <div class="dpad">
+        <div class="dpad">
           <div class="dpad-row">
               <button class="BTN" id="buttonUp">Up</button>
           </div>
@@ -52,17 +52,17 @@
             <button class="BTN" id="buttonDown">Down</button>
             <button class="BTN" id="buttonRight">Right</button>
           </div>
-        </div> -->
-        <!-- <div class="buttons">
+        </div>
+        <div class="buttons">
           <div class="buttons-row">
             <button class="BTN" id="buttonA">A</button>
             <button class="BTN" id="buttonB">B</button>
           </div>
-        </div> -->
+        </div>
       </div>
         <div class="start-select">
           <button class="BTN" id="buttonStart">Start</button>
-          <!-- <button class="BTN" id="buttonSelect">Select</button> -->
+          <button class="BTN" id="buttonSelect">Select</button>
       </div>
     </div>
 
@@ -137,19 +137,19 @@
         document.dispatchEvent(event);
     }
 
-    // document.getElementById('buttonA').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 83); // Key code for 'S'
-    // });
-    // document.getElementById('buttonA').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 83); // Key code for 'S'
-    // });
+    document.getElementById('buttonA').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 83); // Key code for 'S'
+    });
+    document.getElementById('buttonA').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 83); // Key code for 'S'
+    });
 
-    // document.getElementById('buttonB').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 65); // Key code for 'A'
-    // });
-    // document.getElementById('buttonB').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 65); // Key code for 'A'
-    // });
+    document.getElementById('buttonB').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 65); // Key code for 'A'
+    });
+    document.getElementById('buttonB').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 65); // Key code for 'A'
+    });
 
     // Touch start
     document.getElementById('buttonStart').addEventListener('touchstart', function() {
@@ -166,40 +166,40 @@
         simulateKeyEvent('keyup', 13); // Key code for 'Enter'
     });
 
-    // document.getElementById('buttonSelect').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 16); // Key code for 'Shift'
-    // });
-    // document.getElementById('buttonSelect').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 16); // Key code for 'Shift'
-    // });
+    document.getElementById('buttonSelect').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 16); // Key code for 'Shift'
+    });
+    document.getElementById('buttonSelect').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 16); // Key code for 'Shift'
+    });
 
-    // document.getElementById('buttonUp').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 38); // Key code for 'Up'
-    // });
-    // document.getElementById('buttonUp').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 38); // Key code for 'Up'
-    // });
+    document.getElementById('buttonUp').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 38); // Key code for 'Up'
+    });
+    document.getElementById('buttonUp').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 38); // Key code for 'Up'
+    });
 
-    // document.getElementById('buttonDown').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 40); // Key code for 'Down'
-    // });
-    // document.getElementById('buttonDown').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 40); // Key code for 'Down'
-    // });
+    document.getElementById('buttonDown').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 40); // Key code for 'Down'
+    });
+    document.getElementById('buttonDown').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 40); // Key code for 'Down'
+    });
 
-    // document.getElementById('buttonLeft').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 37); // Key code for 'Left'
-    // });
-    // document.getElementById('buttonLeft').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 37); // Key code for 'Left'
-    // });
+    document.getElementById('buttonLeft').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 37); // Key code for 'Left'
+    });
+    document.getElementById('buttonLeft').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 37); // Key code for 'Left'
+    });
 
-    // document.getElementById('buttonRight').addEventListener('touchstart', function() {
-    //     simulateKeyEvent('keydown', 39); // Key code for 'Right'
-    // });
-    // document.getElementById('buttonRight').addEventListener('touchend', function() {
-    //     simulateKeyEvent('keyup', 39); // Key code for 'Right'
-    // });
+    document.getElementById('buttonRight').addEventListener('touchstart', function() {
+        simulateKeyEvent('keydown', 39); // Key code for 'Right'
+    });
+    document.getElementById('buttonRight').addEventListener('touchend', function() {
+        simulateKeyEvent('keyup', 39); // Key code for 'Right'
+    });
   </script>
 
   <footer style="bottom:0px; position: fixed;width:100%; padding-bottom: 20px;">
