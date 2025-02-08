@@ -42,9 +42,9 @@ function gb_OnKeyDown_Event(e) {
     // select
     case 16: gbPin15&=0xFB; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // button B
-    case 65: gbPin15&=0xFD; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 83: gbPin15&=0xFD; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return; // if s pressed
     // button A
-    case 83: gbPin15&=0xFE; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 65: gbPin15&=0xFE; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return; // if a pressed
   }
 }
 
@@ -63,9 +63,9 @@ function gb_OnKeyUp_Event(e) {
     // select
     case 16: gbPin15|=4; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // button B
-    case 65: gbPin15|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 83: gbPin15|=2; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
     // button A
-    case 83: gbPin15|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
+    case 65: gbPin15|=1; MEMW(_IF_,gbRegIF|16); e.preventDefault(); return;
   }
 }
 

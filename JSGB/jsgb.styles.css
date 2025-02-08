@@ -87,7 +87,8 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
     margin: 5px;
 }
 .start-select {
-    display: flex;
+    display: block; 
+    margin: 0 auto;
     justify-content: space-between;
     width: 200px;
     margin-top: 20px;
@@ -95,6 +96,13 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
 .start-select button {
     width: 80px;
     height: 40px;
+}
+
+.controls-image {
+    position: relative;
+    left: 100px;
+    bottom: 70px;
+    width: 150px; /* Adjust the width as needed */
 }
 
 .empty-space {
