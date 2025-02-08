@@ -96,3 +96,8 @@ a:hover, label:hover { color:#AAF; text-decoration:underline;}
     width: 80px;
     height: 40px;
 }
+
+.empty-space {
+    margin: 20px; /* Adds 20px of space around the element */
+    padding: 20px; /* Adds 20px of space inside the element */
+}
