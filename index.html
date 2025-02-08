@@ -19,9 +19,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Leap O' Fate</title>
   <script src="./JSGB/toolbox.js" type="application/x-javascript"></script>
   <script src="./JSGB/scrollbar.js" type="application/x-javascript"></script>
@@ -44,11 +42,8 @@
           <canvas style="display:none;" id="LCD" width="160" height="144"></canvas>
           <canvas id="BUFFER" width="640" height="576"></canvas>
       </div>
-      <div>
-        <a href="https://github.com/panpov/leap-o-fate" target="_blank">View Source</a> | <a href="https://github.com/panpov/panpov.github.io/raw/refs/heads/main/roms/game.gb">Download ROM</a>
-      </div>
       <div class="controls">
-        <div class="dpad">
+        <!-- <div class="dpad">
           <div class="dpad-row">
               <button class="BTN" id="buttonUp">Up</button>
           </div>
@@ -57,18 +52,22 @@
             <button class="BTN" id="buttonDown">Down</button>
             <button class="BTN" id="buttonRight">Right</button>
           </div>
-        </div>
-        <div class="buttons">
+        </div> -->
+        <!-- <div class="buttons">
           <div class="buttons-row">
             <button class="BTN" id="buttonA">A</button>
             <button class="BTN" id="buttonB">B</button>
           </div>
-        </div>
+        </div> -->
       </div>
         <div class="start-select">
           <button class="BTN" id="buttonStart">Start</button>
-          <button class="BTN" id="buttonSelect">Select</button>
+          <!-- <button class="BTN" id="buttonSelect">Select</button> -->
       </div>
+    </div>
+
+    <div>
+      <a href="https://github.com/panpov/leap-o-fate" target="_blank">View Source</a> | <a href="https://github.com/panpov/panpov.github.io/raw/refs/heads/main/roms/game.gb">Download ROM</a>
     </div>
   </div>
 
@@ -138,19 +137,19 @@
         document.dispatchEvent(event);
     }
 
-    document.getElementById('buttonA').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 83); // Key code for 'S'
-    });
-    document.getElementById('buttonA').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 83); // Key code for 'S'
-    });
+    // document.getElementById('buttonA').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 83); // Key code for 'S'
+    // });
+    // document.getElementById('buttonA').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 83); // Key code for 'S'
+    // });
 
-    document.getElementById('buttonB').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 65); // Key code for 'A'
-    });
-    document.getElementById('buttonB').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 65); // Key code for 'A'
-    });
+    // document.getElementById('buttonB').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 65); // Key code for 'A'
+    // });
+    // document.getElementById('buttonB').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 65); // Key code for 'A'
+    // });
 
     // Touch start
     document.getElementById('buttonStart').addEventListener('touchstart', function() {
@@ -167,45 +166,43 @@
         simulateKeyEvent('keyup', 13); // Key code for 'Enter'
     });
 
-    document.getElementById('buttonSelect').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 16); // Key code for 'Shift'
-    });
-    document.getElementById('buttonSelect').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 16); // Key code for 'Shift'
-    });
+    // document.getElementById('buttonSelect').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 16); // Key code for 'Shift'
+    // });
+    // document.getElementById('buttonSelect').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 16); // Key code for 'Shift'
+    // });
 
-    document.getElementById('buttonUp').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 38); // Key code for 'Up'
-    });
-    document.getElementById('buttonUp').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 38); // Key code for 'Up'
-    });
+    // document.getElementById('buttonUp').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 38); // Key code for 'Up'
+    // });
+    // document.getElementById('buttonUp').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 38); // Key code for 'Up'
+    // });
 
-    document.getElementById('buttonDown').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 40); // Key code for 'Down'
-    });
-    document.getElementById('buttonDown').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 40); // Key code for 'Down'
-    });
+    // document.getElementById('buttonDown').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 40); // Key code for 'Down'
+    // });
+    // document.getElementById('buttonDown').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 40); // Key code for 'Down'
+    // });
 
-    document.getElementById('buttonLeft').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 37); // Key code for 'Left'
-    });
-    document.getElementById('buttonLeft').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 37); // Key code for 'Left'
-    });
+    // document.getElementById('buttonLeft').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 37); // Key code for 'Left'
+    // });
+    // document.getElementById('buttonLeft').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 37); // Key code for 'Left'
+    // });
 
-    document.getElementById('buttonRight').addEventListener('touchstart', function() {
-        simulateKeyEvent('keydown', 39); // Key code for 'Right'
-    });
-    document.getElementById('buttonRight').addEventListener('touchend', function() {
-        simulateKeyEvent('keyup', 39); // Key code for 'Right'
-    });
+    // document.getElementById('buttonRight').addEventListener('touchstart', function() {
+    //     simulateKeyEvent('keydown', 39); // Key code for 'Right'
+    // });
+    // document.getElementById('buttonRight').addEventListener('touchend', function() {
+    //     simulateKeyEvent('keyup', 39); // Key code for 'Right'
+    // });
   </script>
 
-  <div class="empty-space"></div>
-
-  <footer style="bottom:0px; position: relative ;width:100%; padding-bottom: 20px;">
+  <footer style="bottom:0px; position: fixed;width:100%; padding-bottom: 20px;">
     <center>  
       Powered by JSGB v.0.02: a JavaScript Nintendo GameBoy Emulator and Debugger
       <br>
